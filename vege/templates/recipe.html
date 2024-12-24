@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+
+
+{% block start %}
+{% load static %}
+
+<center>
+    
+    <div class="parent">
+        <table align="center" cellspacing="10">
+            <form method="POST">
+                {% csrf_token %}
+                <tr>
+                
+                    <div class="mb-3">
+                        <td>
+                            <label for="recipe_name" class="form-label">Recipe Name</label>
+                        </td>
+                        <td>
+                            <input type="text" class="form-control" name="recipe_name" >
+                        </td>
+                    </div>
+                </tr>
+            <tr>
+                <div class="mb-3">
+                    <td>
+                        <label for="recipe description" class="form-label">Recipe Description</label>
+                    </td>
+                    <td>
+                        <textarea name="recipe_description" id="recipe_description"></textarea>
+                    </td>
+                </div>
+            </tr>
+            <tr>
+                
+                <div class="mb-3">
+                    <td>    
+                        <label for="recipe_image" class="form-label">Recipe Image</label>
+                    </td>
+                    <td>
+                        <input type="file" class="form-control" name="recipe_image" >
+                    </td>
+                </div>
+    </tr>
+    <tr><td>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </td></tr>
+</form>
+</table>
+</div>
+
+</center>
+{% endblock  %}
